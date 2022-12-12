@@ -1,4 +1,6 @@
 #include <iostream>
+#include<cstring>
+#include"fact.h"
 using namespace std;
 void Marks();
 void CPSP();
@@ -9,40 +11,12 @@ void Prime();
 void Matrix();
 void Armstrong();
 void Transpose();
-int main()
-{
-	// Prime();
-	// Marks();
-	// CPSP();
-	// MinMax();
-	// Sum();
-	// Fib();
-	// Matrix();
-	cout << " Enter a choice \n \t1 For Prime :\n\t2 For Marks :\n\t3 For CPSP :\n\t4 For MinMax :\n\t5 For Sum :\n\t6 For Matrix :\n\t7 For Fibonaccie :\n\t8 For Armstrong :-\n\t9 For Transpose \n";
-	int ch ;
-	cin >> ch;
-	switch (ch)
-	{
-	case 1:Prime();
-		break;
-	case 2:Marks();
-		break;
-	case 3:CPSP();
-		break;
-	case 4:MinMax();
-		break;
-	case 5:Sum();
-		break;
-	case 6:Matrix();
-		break;	
-	case 7:Fib();
-		break;
-    case 8:Armstrong();
-		break;
-	case 9:Transpose();
-		break;
-	default: cout << " Invalid !!!" ;
-	}
+void Referance();
+void Referance(){
+	int a = 10 ;
+	int &ref = a ;
+	cout << a << endl ;
+	cout << ref ;
 }
 void Matrix()
 {
@@ -324,4 +298,54 @@ void Transpose(){
 	}else{
 		cout << " Matrix is Not Diagonal ";
 	}
+}
+
+
+class STRING{
+	char *str;
+	public: 
+	STRING(char *s){
+		str = new char[strlen(s)+1];
+		strcpy(str,s);
+	}
+		~STRING();
+	void putstr(){
+		cout << str ; 
+	}
+};
+STRING::~STRING(){
+	delete str;
+}
+int main()
+{
+//	STRING s1("Anurag");
+//	s1.putstr();
+//	Referance();
+cout << fact(5);
+//	cout << " Enter a choice \n \t1 For Prime :\n\t2 For Marks :\n\t3 For CPSP :\n\t4 For MinMax :\n\t5 For Sum :\n\t6 For Matrix :\n\t7 For Fibonaccie :\n\t8 For Armstrong :-\n\t9 For Transpose \n";
+//	int ch ;
+//	cin >> ch;
+//	switch (ch)
+//	{
+//	case 1:Prime();
+//		break;
+//	case 2:Marks();
+//		break;
+//	case 3:CPSP();
+//		break;
+//	case 4:MinMax();
+//		break;
+//	case 5:Sum();
+//		break;
+//	case 6:Matrix();
+//		break;	
+//	case 7:Fib();
+//		break;
+//    case 8:Armstrong();
+//		break;
+//	case 9:Transpose();
+//		break;
+//	default: cout << " Invalid !!!" ;
+//	}
+
 }
